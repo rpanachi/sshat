@@ -1,16 +1,15 @@
 package org.oneupfordev.action;
 
 import net.sourceforge.stripes.action.DefaultHandler;
-import net.sourceforge.stripes.action.ForwardResolution;
 import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.UrlBinding;
 
-@UrlBinding("/Home.htm")
-public class HomeActionBean extends BaseActionBean {
+import org.oneupfordev.sshat.action.GenericActionBean;
+
+public class HomeActionBean extends GenericActionBean {
 
     @DefaultHandler
     public Resolution view() {
-        return new ForwardResolution("/WEB-INF/jsp/home.jsp");
+        return render("home");
     }
 
     public String getJavaVersion() {

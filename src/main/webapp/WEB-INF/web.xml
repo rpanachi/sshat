@@ -17,9 +17,11 @@
         </init-param>
         <init-param>
             <param-name>Extension.Packages</param-name>
-            <param-value>org.oneupfordev.extensions, org.oneupfordev.reload.extensions, net.sourceforge.stripes.integration.spring</param-value>
+            <param-value>org.oneupfordev.extensions, org.oneupfordev.reload.extensions, net.sourceforge.stripes.integration.spring, com.stripersist</param-value>
         </init-param>
     </filter>
+
+    <!-- org.stripesbook.reload.extensions -->
 
     <servlet>
         <servlet-name>DispatcherServlet</servlet-name>
@@ -36,11 +38,17 @@
 
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
-        <url-pattern>*.htm</url-pattern>
+        <url-pattern>*.action</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+
+    <context-param>
+        <param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+        <param-value>messages</param-value>
+    </context-param>
+
 </web-app>
 
